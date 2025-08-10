@@ -50,9 +50,11 @@ export default {
             const { valid } = await this.$refs.form.validate()
             if (valid) {
                 const newWord = {
+                    id: Date.now(),
                     japanese: this.japanese,
                     english: this.english,
-                    furigana: this.furigana
+                    furigana: this.furigana,
+                    isActive: true
                 }
                 let vocabList 
                 if (localStorage.getItem("vocabList")) {
